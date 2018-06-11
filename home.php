@@ -1,4 +1,3 @@
-
 <div data-pw-id="main">
   <?php require($config->paths->templates.'includes/sections/hp_slideshow.inc') ?>
   

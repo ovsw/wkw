@@ -93,7 +93,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12 logo-div">
-          <img src="<?= $config->urls->templates ?>images/logo-footer.png" alt="Logo">
+          <img src="<?= $config->urls->templates ?>images/wkw-logo-transparent-on-dark.png" alt="Custom Weed and Pest Contol Arizona Logo">
         </div>
         <div class="col-md-3 col-sm-4 col-ms-4 col matchHeight">
           <span class="fa fa-location-arrow"></span>

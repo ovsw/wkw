@@ -104,7 +104,18 @@ nav.navbar .logo {
   background-color: #92C43D;
   color: #fff;
 }
+.pagination > li > a {
+  display: inline-block;
+  color: #92C43D;
+  margin: 0;
+  font-size: 16px !important;
+  border-color: transparent;
+}
+.pagination > li.MarkupPagerNavOn a {
+  color: #000;
+  font-weight: bold;
 
+}
 
 /* RESPONSIVE */
 

@@ -4,15 +4,24 @@
     <div class="container">
       
       <h1 data-pw-id="main-heading"><?= $page->get("long_title|title") ?></h1>
+      
       <ol class="bread">
-        <li>
-            <a href="index.html"><span>Home</span></a>
-        </li>
-        <li class="divider"><span>|</span></li>
-        <li>
-            <span>Flowers Planting</span>
-        </li>
+
+      <?php  $parents = $page->parents;
+
+        foreach($parents as $parent) {
+            $url = $parent->url;
+            echo "<li><a href='$url'><span>{$parent->title}</span></a></li>\n &gt;";
+        }
+
+        // show current / "we are here" page as well, but not as link: (last element)
+        echo "<li><span>{$page->title}</span></li>\n";
+
+       
+      ?>
+
       </ol>
+      
     </div>
   </header>
 
