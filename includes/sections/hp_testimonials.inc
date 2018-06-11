@@ -21,7 +21,7 @@
 
 					<?php endforeach; ?>
 
-						</div>					</div>
+						</div>				
 					<div class="navigation"><a href="#" class="arrow-left fa fa-chevron-left"></a></div>
 					<div class="navigation"><a href="#" class="arrow-right fa fa-chevron-right"></a></div>				
 				</div>

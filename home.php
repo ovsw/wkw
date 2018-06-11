@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php require($config->paths->templates.'includes/head.inc') ?>
-<body>
-  
-  <?php require($config->paths->templates.'includes/main-nav.inc') ?>
-  
+
+<div data-pw-id="main">
   <?php require($config->paths->templates.'includes/sections/hp_slideshow.inc') ?>
   
   <?php require($config->paths->templates.'includes/sections/discount.inc') ?>
@@ -91,10 +86,5 @@
   <?php require($config->paths->templates.'includes/sections/hp_testimonials.inc') ?>
 
   <?php require($config->paths->templates.'includes/sections/hp_blog_posts.inc') ?>
-  
-  <?php require($config->paths->templates.'includes/footer.inc') ?>
 
-  <?php require($config->paths->templates.'includes/foot.inc') ?>
-
-</body>
-</html>
+</div>
