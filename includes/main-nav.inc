@@ -53,7 +53,7 @@
 						'xitem_current_tpl' => '<span>{title}</span>',
 						'date_format' => 'Y/m/d',
 						'code_formatting' => false,
-						'debug' => true
+						'debug' => false
 					);
 					
 					$homePage = $pages->get('1');

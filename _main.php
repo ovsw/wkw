@@ -60,7 +60,7 @@
       <div class="item">
         <div class="row">
           <div class="col-md-4 col-sm-12">
-            <h3 class="white no-bg">Subscribe Us</h3>
+            <h3 class="white no-bg">Subscribe</h3>
             <h4 class="black no-bg">For fresh special offers</h4>
           </div>
           <div class="col-md-5 col-sm-12">
@@ -75,12 +75,12 @@
           </div>
           <div class="col-md-3 col-sm-12">
             <div class="social-box">
-              <h6>Join Our Social:</h6>
+              <h6>Social Media:</h6>
               <ul class="social social-small social-white">
-                <li><a href="#" class="fa fa-twitter"></a></li>
-                <li><a href="#" class="fa fa-facebook"></a></li>
-                <li><a href="#" class="fa fa-instagram"></a></li>
-                <li><a href="#" class="fa fa-google-plus"></a></li>
+                <li><a href="https://www.facebook.com/Custom-Weed-Spray-Service-Inc-160161285731/" class="fa fa-facebook"></a></li>
+                <li><a href="https://twitter.com/wekillweeds" class="fa fa-twitter"></a></li>
+                <!-- <li><a href="#" class="fa fa-instagram"></a></li>
+                <li><a href="#" class="fa fa-google-plus"></a></li> -->
               </ul>							
             </div>
           </div>				
@@ -91,15 +91,64 @@
 
   <div id="block-footer">
     <div class="container">
+
       <div class="row">
-        <div class="col-md-3 col-sm-12 logo-div">
-          <img src="<?= $config->urls->templates ?>images/wkw-logo-transparent-on-dark.png" alt="Custom Weed and Pest Contol Arizona Logo">
+
+        <?php 
+
+          $footerPages1 = $homePage->footer_nav_1;
+          $footerPages2 = $homePage->footer_nav_2;
+          $footerPages3 = $homePage->footer_nav_3;
+          $footerPages4 = $homePage->footer_nav_4;
+
+
+          $footerMenuOptions = array(
+						'parent_class' => 'parent',
+						'current_class' => 'current_page_item',
+						'has_children_class' => 'hasSub',
+						'levels' => false,
+						'levels_prefix' => 'level-',
+						'max_levels' => 1,
+						'firstlast' => false,
+						'collapsed' => false,
+						'show_root' => false,
+						'selector' => 'parent!=1156',
+						'selector_field' => 'nav_selector',
+						'outer_tpl' => '<ul class="crocus footer-nav">||</ul>',
+						'inner_tpl' => '<ul class="sub-menu">||</ul>',
+						'list_tpl' => '<li%s>||</li>',
+						'list_field_class' => '',
+						'item_tpl' => '<a href="{url}">{title}</a>',
+						'item_current_tpl' => '<a href="{url}">{title}</a>',
+						'xtemplates' => '',
+						'xitem_tpl' => '<a href="{url}">{title}</a>',
+						'xitem_current_tpl' => '<span>{title}</span>',
+						'date_format' => 'Y/m/d',
+						'code_formatting' => false,
+						'debug' => false
+          );
+          
+         ?>
+        <div class="col-md-5 col-sm-4 col-ms-4 col matchHeight">
+        <br><img src="<?= $config->urls->templates ?>images/wkw-logo-transparent-on-dark.png" alt="Custom Weed and Pest Contol Arizona Logo" class="footer_logo"><br><br>
+          <p>Custom Weed &amp; Pest Control has served homes and businesses throughout Arizona for over 25 years. We look forward to helping you keep your property beautiful.</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-ms-4 col matchHeight">
+          <?= $treeMenu->render($footerMenuOptions, null, $footerPages1); ?>
         </div>
         <div class="col-md-3 col-sm-4 col-ms-4 col matchHeight">
+          <?= $treeMenu->render($footerMenuOptions, null, $footerPages2); ?>
+        </div>
+      </div>  
+      <!-- /.row -->
+            <hr style="border-color: #92c43d">
+      <div class="row" style="margin-top:50px;">
+
+        <div class="col-md-5 col-sm-4 col-ms-4 col matchHeight">
           <span class="fa fa-location-arrow"></span>
           <p>Peoria, Phoenix, AZ</p>
         </div>
-        <div class="col-md-3 col-sm-4 col-ms-4 col matchHeight">
+        <div class="col-md-4 col-sm-4 col-ms-4 col matchHeight">
           <span class="fa fa-phone-square"></span>
           <p>Tel: <a href="tel:602-956-3844">(602) 956-3844</a>
           <br>
@@ -109,7 +158,9 @@
           <span class="fa fa-envelope"></span>
           <p><a href="mailto:info@wekillweeds.com">info@wekillweeds.com</a></p>
         </div>
+
       </div>
+      <!-- /.row -->
     </div>
   </div>
 
