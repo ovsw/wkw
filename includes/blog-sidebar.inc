@@ -3,8 +3,8 @@
     <aside class="widget">
       <h4>Search</h4>
         <div class="content">
-          <form class="form wp-searchform" method="get">
-            <input type="text" name="search" value="" placeholder="Search for...">
+          <form class="form wp-searchform" method="get" action="<?= $pages->get('template=search')->url; ?>">
+            <input type="text" name="q" value="<?= $sanitizer->entities($input->whitelist('q')); ?>" placeholder="Search for...">
             <button type="submit" class="fa fa-search"></button>
           </form>
         </div>
