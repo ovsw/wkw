@@ -20,12 +20,12 @@
 				</button>
 
 				<div id="search">
-					<form>
-						<div class="input-div"><input type="text" name="search" value="" placeholder="Search"></div>
+					<form action="<?= $pages->get('template=search')->url; ?>" method="get">
+						<div class="input-div"><input type="text" name="q" value="<?= $sanitizer->entities($input->whitelist('q')); ?>" placeholder="Search"></div>
 						<a href="#" class="search-icon fa fa-search"></a>
 					</form>
 				</div>
-				<a href="#" id="header-mail"><span class="fa fa-envelope"></span></a>
+				<a href="mailto:info@wekillweeds.com" id="header-mail"><span class="fa fa-envelope"></span></a>
 
 				<?php 
 					$treeMenu = $modules->get("MarkupSimpleNavigation");
