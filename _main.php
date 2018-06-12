@@ -5,11 +5,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" type="image/png" href="<?= $config->urls->templates ?>images/favicon.png">    
+	<meta name="description" content="<?= $page->seo->description ?>">
+	<meta name="author" content="OVS Websites">
+	<link rel="icon" type="image/png" href="<?= $config->urls->templates ?>images/favicon.png"> 
 
-	<title>Phoenix Weed and Pest Control Service - We Kill Weeds in Arizona</title>
+  <title><?= $page->seo->title ?></title>
+  
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<?= $page->seo->title ?>" />
+  <meta property="og:description" content="<?= $page->seo->description ?>" />
+  <meta property="og:url" content="https://wekillweeds.com/" />
+  <meta property="og:site_name" content="CUSTOM WEED &amp; PEST CONTROL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="<?= $page->seo->description ?>" />
+  <meta name="twitter:title" content="<?= $page->seo->title ?>" />
+
+  <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/wekillweeds.com\/","name":"Custom Weed and Pest Control","potentialAction":{"@type":"SearchAction","target":"http:\/\/wekillweeds.com\/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"http:\/\/wekillweeds.com\/","sameAs":[],"@id":"#organization","name":"Custom Weed and Pest Control","logo":"<?= $config->urls->templates ?>images/wkw-logo-t.png"}</script>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -61,7 +75,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <h3 class="white no-bg">Subscribe</h3>
-            <h4 class="black no-bg">For fresh special offers</h4>
+            <h4 class="black no-bg">For special offers</h4>
           </div>
           <div class="col-md-5 col-sm-12">
             <form>
@@ -145,16 +159,19 @@
       <div class="row" style="margin-top:50px;">
 
         <div class="col-md-5 col-sm-4 col-ms-4 col matchHeight">
+          <br>
           <span class="fa fa-location-arrow"></span>
           <p>Peoria, Phoenix, AZ</p>
         </div>
         <div class="col-md-4 col-sm-4 col-ms-4 col matchHeight">
+        <br>
           <span class="fa fa-phone-square"></span>
           <p>Tel: <a href="tel:602-956-3844">(602) 956-3844</a>
           <br>
           Fax: (623) 376-7743</p>
         </div>
         <div class="col-md-3 col-sm-4 col-ms-4 col matchHeight">
+        <br>
           <span class="fa fa-envelope"></span>
           <p><a href="mailto:info@wekillweeds.com">info@wekillweeds.com</a></p>
         </div>
