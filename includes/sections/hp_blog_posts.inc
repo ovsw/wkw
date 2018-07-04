@@ -9,8 +9,14 @@
 
         <div class="col-lg-4 col-md-4 col-sm-6 a-a-a">
           <div class="item matchHeight">
-            <?php $image = $post->blog_images->first(); $img = $image->size(715, 477) ?>
-            <a href="<?= $post->url ?>" class="photo"><img src="<?= $img->url ?>" class="full-width" alt="<?= $image->description ?>"></a>						
+            <?php $image_description = ""; if (count($post->blog_images) > 0) {
+              $image = $post->blog_images->first();
+              $img_url = $image->size(715, 477)->url;
+              $image_description = $image->description;
+            }else{
+              $img_url = 'https://placehold.it/718x479?text=missing+image';
+            }?>
+            <a href="<?= $post->url ?>" class="photo"><img src="<?= $img_url ?>" class="full-width" alt="<?= $image_description ?>"></a>						
             <div class="description">
               <a href="<?= $post->url ?>" class="header"><h4><?= $post->title ?></h4></a>
               <p class="text"><?= $sanitizer->truncate($post->body) ?></p>
