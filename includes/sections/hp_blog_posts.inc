@@ -19,7 +19,7 @@
             <a href="<?= $post->url ?>" class="photo"><img src="<?= $img_url ?>" class="full-width" alt="<?= $image_description ?>"></a>						
             <div class="description">
               <a href="<?= $post->url ?>" class="header"><h4><?= $post->title ?></h4></a>
-              <p class="text"><?= $sanitizer->truncate($post->body) ?></p>
+              <p class="text"><?= $sanitizer->truncate($post->post_body) ?></p>
             </div>
             <div class="blog-info">
               <div class="row">
