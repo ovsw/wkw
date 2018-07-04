@@ -21,7 +21,7 @@ if($q) {
 	$q = $sanitizer->selectorValue($q); 
 	// Search the title and body fields for our query text.
 	// Limit the results to 50 pages. 
-	$selector = "template=basic-page|post,title|body~=$q, limit=50"; 
+	$selector = "template=basic-page|blog_post,title|blog_body~=$q, limit=50"; 
 	// If user has access to admin pages, lets exclude them from the search results.
 	// Note that 2 is the ID of the admin page, so this excludes all results that have
 	// that page as one of the parents/ancestors. This isn't necessary if the user 
@@ -49,8 +49,8 @@ echo $content;
 function renderSearchResults($matches, $sanitizer) {
   $out = '';
   foreach ($matches as $result) {
-    $out .= "<h3><a href='$result->url'>$result->title</a></h3>";
-    $out .= "<p>".$sanitizer->truncate($result->body)." <a href='".$result->url."'>read more</a></p>";
+    $out .= "<h3><a href='$result->url'>$result->title</a></h3>";           
+    $out .= "<p>".$sanitizer->truncate($result->blog_body)." <a href='".$result->url."'>read more</a></p>";
   }
   return $out;
 }
