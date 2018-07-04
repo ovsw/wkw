@@ -14,7 +14,7 @@
       <h4>Categories</h4>
       <ul>
         <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->get('1104')->children as $category) : ?>
+        <?php foreach($pages->get('1037')->children as $category) : ?>
           <li><a href="<?= $category->url ?>"><?= $category->title ?> </a></li>
         <?php endforeach; ?>
       </ul>
@@ -24,8 +24,8 @@
       <h4>Popular Tags</h4>
       <div class="blogTags">
         <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->get('1021')->children as $tag) : ?>
-          <?php if($pages->find("template=post, tags=$tag")->count() > 1) :?>
+        <?php foreach($pages->get('1038')->children as $tag) : ?>
+          <?php if($pages->find("template=blog_post, blog_tags=$tag")->count() > 1) :?>
           <a href="<?= $tag->url ?>"><?= $tag->title ?> </a>
           <?php endif; ?>
         <?php endforeach; ?>
