@@ -1,0 +1,407 @@
+.body-rte {
+
+  /* padding: 0 2rem 1rem 2rem; */
+  color: color($black l(+40%));
+
+  strong {
+    font-weight: 700;
+  }
+
+  h2 {
+    color: color($msGreen l(-10%));
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  h2:first-child {
+    color: color($msGreen l(-10%));
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5rem;
+    margin-top: 0rem;
+
+    @mixin atMedium {
+      font-size: 3rem;
+    }
+  }
+
+  h3 {
+    color: color($msDarkBrown l(+20%) s(-10%));
+    /* text-transform: uppercase; */
+    /* background-color: color($msGreen a(50%));
+    padding: 0.5rem 1rem; */
+    font-weight: 400;
+
+    a {
+      color: $msGreen ;
+    }
+  }
+
+  h3:first-child {
+    margin-top: 0;
+  }
+  
+  h4 {
+    color($msGreen l(-20%))
+    color: color($msDarkBrown l(+20%) s(-10%));
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-family: $body-font;
+    line-height: 1.9;
+    margin: 0 auto 2.5rem auto;
+    font-weight: 300;
+
+    strong {
+      color: #562e2e;
+    }
+  }
+  
+  ul, ol {
+    font-family: $body-font;
+    margin-bottom: 2.5rem;
+    
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+
+  img {
+    margin: 0 auto;
+    box-shadow: 0 0 6px color($black a(60%));
+    display: block;
+
+    @mixin atMedium {
+      border: 10px solid white;
+    }
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  table {
+    th {
+      background-color: color($msDarkBrown l(+20%));
+      color: $white;
+      font-weight: 300;
+      padding: 0.5rem;
+      border-right: 1px solid color(white a(60%));
+      border-bottom: 1px solid color(white a(60%));
+
+      &:last-child {
+        border-right:none;
+      }
+    }
+    
+    td {
+      background-color: $white;
+      border-right: 1px solid color(brown a(60%));
+      border-bottom: 1px solid color(brown a(60%));
+      text-align: center;
+    }
+  }
+
+  &__pullquote{
+    
+    margin: 2rem;
+    font-size: 1.5rem;
+    color: color($msGreen l(-10%));
+    font-style: italic;
+    font-family: $heading-font;
+
+    @mixin atMedium {
+      font-size: 2rem;
+      float: right;
+      width: 30%;
+    }
+  }
+
+  &__text-w-side-image {
+   
+    margin-bottom: 2rem;
+
+    @mixin atMedium {
+      display: flex;
+    }
+
+ 
+  }
+
+  &__side-image-wrapper {
+    
+    @mixin atMedium {
+      flex: 1 1 30%;
+      width: 30%;
+    }
+  }
+
+  &__side-image {
+    /* margin: 0 2rem 4rem 2rem!important; */
+    border-width: 3px !important;
+    display: block!important;
+    width: 150px!important;
+    max-width: none;
+  }
+
+  &__rounded-image {
+    border-radius: 50%!important;
+  }
+
+  &__side-text {
+    padding-top: 1rem;
+    @mixin atMedium {
+      flex: 1 1 70%;
+      width: 70%;
+    }
+  }
+
+
+  p a, li a {
+      text-shadow: .03em 0 $off-white, -.03em 0 $off-white, 0 .03em $off-white, 0 -.03em $off-white, .06em 0 $off-white, -.06em 0 $off-white, .09em 0 $off-white, -.09em 0 $off-white, .12em 0 $off-white, -.12em 0 $off-white, .15em 0 $off-white, -.15em 0 $off-white;
+      color: color($msGreen l(-10%) w(-30%));
+      text-decoration: none; 
+      background-image:
+        linear-gradient($msGreen, $msGreen),
+        linear-gradient($msGreen, $msGreen),
+        linear-gradient($msGreen, $msGreen);
+      background-size: .05em 2px, .05em 2px, 2px 2px;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      background-position: 0% 100%, 100% 100%, 0% 100%;
+      padding-bottom: 1rem;
+      
+      padding: 0 0.05em;
+
+      &:hover {
+        /* background-image:  linear-gradient(color($msGreen l(+20%)), color($msGreen l(+20%))); */
+        color: color($msGreen l(-20%));
+        /* background-size: auto; */
+        
+      }
+    }
+
+    .faqs {
+      
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+      
+      &__question {
+        padding-top: 0.5rem;
+        cursor: pointer;
+      }
+
+      &__question-text {
+        margin: 0;
+        padding: 1rem;
+        background-color: color($msGreen a(70%));
+        color: $msDarkBrown;
+        font-size: 1rem;
+        
+        @mixin atMedium {
+          font-size: 1.33rem;
+        }
+      }
+
+      &__answer {
+        background-color: color($msGreen a(20%));
+        margin: 0;
+        padding: 1rem;
+        display: none;  
+
+        p, li {
+          font-size: 0.9rem;
+
+          @mixin atMedium {
+            font-size: 1.125rem;
+          }
+        }
+
+        p:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+  
+  /*
+ * jQuery Basic Table
+ * Author: Jerry Low
+ */
+
+
+  table {
+    background: white;
+    border-collapse: collapse;
+    margin: 1.25em 0 0;
+    width: 100%;
+  }
+
+  table tr,
+  table th,
+  table td {
+    border: none;
+    border-bottom: 1px solid #e4ebeb;
+    font-family: 'Lato', sans-serif;
+    font-size: .875rem;
+  }
+
+  table th,
+  table td {
+    padding: 10px 3px;
+    text-align: left;
+  }
+
+  table th {
+    background: color($msGreen s(-10%) b(+15%));
+    color: #ffffff;
+    /*text-transform: uppercase;*/
+  }
+
+  table tr td {
+    background: #eaf3f5;
+    color: #6d6565;
+  }
+
+  table tr:nth-of-type(2n+2) td {
+    background: #ffffff;
+  }
+
+  table.bt tbody td {
+    font-size: .8125rem;
+    padding: 0;
+  }
+
+  table.bt tbody td:before {
+      background: color($msGreen s(-20%));
+      color: white;
+      margin-right: 10px;
+      padding: 11px 16px;
+      border-bottom: 1px solid #98cec3;
+  }
+
+  table.bt tbody td .bt-content {
+    display: inline-block;
+    padding: 12px 5px;
+  }
+
+  table.bt tbody td:first-of-type:before,
+  table.bt tbody td:first-of-type .bt-content {
+    padding-top: 10px;
+  }
+
+  table.bt tbody td:last-of-type:before,
+  table.bt tbody td:last-of-type .bt-content {
+    /*padding-bottom: 10px;*/
+  }
+
+
+  
+
+  /********************/
+  /*
+  * jQuery Basic Table
+  * Author: Jerry Low
+  */
+
+  table.bt thead {
+    display: none;
+  }
+
+  table.bt tbody td {
+    border: none;
+    display: block;
+    vertical-align: top;
+  }
+
+  table.bt tbody td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 6.5em;
+    display: inline-block;
+  }
+
+  table.bt tbody td.bt-hide {
+    display: none;
+  }
+
+  table.bt tbody td .bt-content {
+    vertical-align: top;
+  }
+
+  .bt-wrapper.active {
+    max-height: 310px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+}
+
+.testimonials-rte {
+  
+  &__testimonial {
+    margin-top: 2rem;
+    border-bottom: 1px solid color($msGreen a(40%));
+
+    &.single {
+      border-top: 1px solid color($msGreen a(40%)); 
+    }
+
+    &:last-child {
+      border-bottom: none;
+
+      &.single {
+        border-top: 1px solid color($msGreen a(40%));
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom:0!important;
+    font-style: italic;
+  }
+
+  &__author {
+    color: $msDarkBrown;
+    font-weight: 800!important;
+  }
+
+}
+
+.basic-page__content-wrapper .performance-cta-btn  {
+
+  text-align: center;
+
+  a {
+    background-color: $msGreen;
+    color: $white;
+    text-shadow: none;
+    padding: 0.4rem 2rem;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: $body-font;
+    box-shadow: 2px 2px 0 color($msDarkBrown a(50%));
+
+    @mixin atMedium {
+      font-size: 1.7rem;
+    }
+
+    &:hover {
+      background-color: color($msGreen l(+10%));
+      position: relative;
+      top: 2px;
+      left: 2px;
+      box-shadow: none;
+    }
+  }
+  
+}
+

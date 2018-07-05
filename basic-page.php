@@ -2,7 +2,7 @@
 
 <div class="text-page" data-pw-id="main-content">
 
-  <?= $page->body; ?>
+  <?= $page->blog_body; ?>
 
 </div>
 
