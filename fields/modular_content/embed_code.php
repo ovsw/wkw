@@ -1,1 +1,0 @@
-<?= $page->embed_code ?>
