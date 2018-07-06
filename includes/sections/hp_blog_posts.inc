@@ -5,7 +5,7 @@
     <div class="blog">
       <div class="row">
 
-        <?php $recentPosts = $pages->find("template=blog_post,sort=-blog_date,limit=3"); foreach($recentPosts as $post) : ?>
+        <?php $recentPosts = $pages->find("template=blog-post,sort=-blog_date,limit=3"); foreach($recentPosts as $post) : ?>
 
         <div class="col-lg-4 col-md-4 col-sm-6 a-a-a">
           <div class="item matchHeight">

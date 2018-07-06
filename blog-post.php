@@ -1,61 +1,45 @@
-<?php namespace ProcessWire;
+<?php namespace ProcessWire; 
 
-/**
- * Post template
- * Demo template file populated with MarkupBlog output and additional custom code for a Blog Post
- *
- */
+require($config->paths->templates.'layouts/sidebar-right.inc') ?>
 
-	// CALL THE MODULE - MarkupBlog
-	$blog = $modules->get("MarkupBlog");
+<div data-pw-id="main-heading">Tips From our Blog</div>
 
-    // subnav
-    $subNav = '';
+<div data-pw-id="main-content" class="text-page">
 
-    // subnav: get date info for creating link to archives page in subnav
-    $date = $page->getUnformatted('blog_date');
-    $year = date('Y', $date);
-    $month = date('n', $date);
+    <div class="blog-post text-page">
 
-    // subnav: if there are categories and/or tags, then make a separate nav for them
-    if(count($page->blog_categories)) $subNav .= $blog->renderNav(__('Related Categories'), $page->blog_categories);
-    if(count($page->blog_tags)) $subNav .= $blog->renderNav(__('Related Tags'), $page->blog_tags);
+      <h1><?= $page->title ?></h1>
+      
+      <!-- <img src="<?= $config->urls->templates ?>images/_blog-post.jpg" class="main-photo full-width" alt="Blog"> -->
+      <div class="blog-info">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-6">
+              <span class="date"><?= date("d M 'y", $page->getUnformatted("blog_date")); ?></span>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-6 right">
+              <ul>
+                  <!-- <li class="icon-fav"><a href="#"><span class="fa fa-eye"></span>16</a></li> -->
+                  <li class="icon-comments"><a href="#"><span class="fa fa-commenting-o"></span><?= count($page->blog_comments) ?></a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
 
-    // subnav: contains authors, archives and categories links
-    $authorsURL = $pages->get('template=blog-authors')->url;
-    $archivesURL = $pages->get('template=blog-archives')->url;
-	// use pageName sanitized author title as PART of URL, else empty
-	$authorURL = $sanitizer->pageName($page->createdUser->title) ? $sanitizer->pageName($page->createdUser->title) . '/' : '';
-    $authorName = $page->createdUser->title ? $page->createdUser->title : 'Author Name';//use generic 'Author Name' if author title not yet set
+      
+      <?= $page->blog_body; ?>
 
-    $subNavItems = array(
-		$authorsURL . $authorURL => $authorName,
-		$archivesURL . $year . "/" . $month . "/" => strftime('%B %Y', $date)
-    );
+      <?= $page->blog_comments->render(); ?>
+      <?= $page->blog_comments->renderForm();  ?>
 
-    $subNav .= $blog->renderNav(__('See Also'), $subNavItems);
+    </div>
+    
+</div>
+<!-- END MAIN CONTENT -->
 
-     // main content
+<!-- START SIDEBAR -->
+<div data-pw-id="right-sidebar">
+  
+  <?php require($config->paths->templates.'includes/blog-sidebar.inc') ?>
 
-	// render a single full post including title, comments, comment form + next/prev posts links, etc
-	// $blog->postAuthor(): if available, add 'post author widget' at the end (or at the top if desired) of each post
-	// $content = $blog->renderPosts($page) . $blog->renderComments($page->blog_comments) . $blog->renderNextPrevPosts($page);//without post author
-
-    /*
-        for this demo, renderComments() has to adapt to whether blog commenting feature was installed or not whilst remaining blog structure/style-agnostic
-        in your own blog install, you would know if you enabled the feature so there would be no need for such a check
-		in addition, our 'check' code is not code you would normally use in a template file.
-		we use such code here to be both foolproof that the commenting feature is installed and blog structure-agnostic
-    */
-    #not foolproof; user could have post-installed custom commenting feature (e.g. Disqus) with a similar field blog_comments
-	// $renderComments = $page->template->hasField('blog_comments') ? $blog->renderComments($page->blog_comments) : '';
-
-    $blogConfigs = $modules->getModuleConfigData('ProcessBlog');
-
-    $renderComments = $blogConfigs['commentsUse'] == 1 ? $blog->renderComments($page->blog_comments) : '';
-	// with post author widget
-    $content = $blog->renderPosts($page) . $blog->postAuthor() . $renderComments . $blog->renderNextPrevPosts($page);
-
-    // include the main/common markup
-    require_once("blog-main.inc");
-
+</div>
+<!-- END SIDEBAR -->

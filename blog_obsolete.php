@@ -7,7 +7,7 @@
   <div class="blog">
     <div class="row">
 
-      <?php $posts = $pages->find("template=blog_post,sort=-blog_date,limit=8"); foreach($posts as $post) : ?>
+      <?php $posts = $pages->find("template=blog-post,sort=-blog_date,limit=8"); foreach($posts as $post) : ?>
 
       <div class="col-lg-6 col-md-6 col-sm-12 a-a-a">
         <div class="item matchHeight">
