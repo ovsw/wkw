@@ -1,20 +1,21 @@
 <?php namespace ProcessWire; 
 
 // determine what section we're in and set up a var to help us find posts that belong to the current section
-switch ($page->rootParent->id) {
-  case '1221':
+switch ($page->id) {
+  case '1225':
     $blogSection = "weed-control";
     break;
-  case '1222':
+  case '1226':
     $blogSection = "pest-control";
     break;
-  case '1223':
+  case '1229':
   $blogSection = "plant-tree-health";
     break;
   default:
     $blogSection = "unknown";
     break;
 }
+
 
 if(strlen($input->urlSegment1)) {
 	// render the blog post named in urlSegment1 

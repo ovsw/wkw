@@ -1,12 +1,16 @@
 <?php namespace ProcessWire; 
-  $postBelongsToSections = "";
-  $i=0;
-  $sections = $page->blog_section;
-  foreach ($sections as $section) {
-    $i++;
-    $postBelongsToSections .= $section->value;
-    if ($i < count($sections)) {
-    $postBelongsToSections .= "|" ;      
+  if (!isset($blogSection)) {
+
+    $blogSection = "";
+    $i=0;
+    $sections = $page->blog_section;
+
+    foreach ($sections as $section) {
+      $i++;
+      $blogSection .= $section->value;
+      if ($i < count($sections)) {
+      $blogSection .= "|" ;      
+      }
     }
   }
 ?>
@@ -26,7 +30,7 @@
       <h4>Categories</h4>
       <ul>
         <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->find("template=blog-category,sort=title,blog_categories.owner.blog_section.value=$postBelongsToSections") as $category) : ?>
+        <?php foreach($pages->find("template=blog-category,sort=title,blog_categories.owner.blog_section.value=$blogSection") as $category) : ?>
           <li><a href="<?= $category->url ?>"><?= $category->title ?> </a></li>
         <?php endforeach; ?>
       </ul>
@@ -36,7 +40,7 @@
       <h4>Popular Tags</h4>
       <div class="blogTags">
         <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->find("template=blog-tag,sort=title,blog_tags.owner.blog_section.value=$postBelongsToSections") as $tag) : ?>
+        <?php foreach($pages->find("template=blog-tag,sort=title,blog_tags.owner.blog_section.value=$blogSection") as $tag) : ?>
           <?php if($pages->find("template=blog-post, blog_tags=$tag")->count() > 1) :?>
           <a href="<?= $tag->url ?>"><?= $tag->title ?> </a>
           <?php endif; ?>

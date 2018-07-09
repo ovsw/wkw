@@ -15,21 +15,23 @@ require($config->paths->templates.'layouts/sidebar-right.inc'); ?>
           <?php $image_description = ""; if (count($post->blog_images) > 0) {
             $image = $post->blog_images->first();
             $img_url = $image->size(718, 479)->url;
-            $image_description = $image->description;
+            $image_description = $image->description != "" ? $image->description : "";
           }else{
             $img_url = 'https://placehold.it/718x479?text=missing+image';
           }
           $blogParents = $page->parents();
           ?>
-          <a href="<?= "/".$blogParents[1]->name."/".$page->name."/".$post->name ?>" class="photo"><img src="<?= $img_url ?>" class="full-width" alt="<?= $image_description ?>"></a>
+          <a href="<?= "/".$page->name."/".$post->name ?>" class="photo">
+            <img src="<?= $img_url ?>" class="full-width" alt="<?= $image_description ?>">
+          </a>
           <div class="description">
-              <a href="<?= "/".$blogParents[1]->name."/".$page->name."/".$post->name ?>" class="header"><h4><?= $post->title ?></h4></a>
+              <a href="<?= "/".$page->name."/".$post->name ?>" class="header"><h4><?= $post->title ?></h4></a>
               <p class="text"></p>
           </div>
           <div class="blog-info">
               <div class="row">
                   <div class="col-lg-6 col-sm-12  col-xs-6">
-                      <a href="<?= "/".$blogParents[1]->name."/".$page->name."/".$post->name ?>" class="date"><?= date("d M 'y", $post->getUnformatted("blog_date")); ?></a>
+                      <a href="<?= "/".$page->name."/".$post->name ?>" class="date"><?= date("d M 'y", $post->getUnformatted("blog_date")); ?></a>
                   </div>
                   <div class="col-lg-6 col-sm-12 col-xs-6 right">
                       <ul>
