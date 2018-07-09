@@ -26,27 +26,29 @@
         </div>
     </aside>
 
-    <aside class="widget">
+    <!-- <aside class="widget">
       <h4>Categories</h4>
       <ul>
-        <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->find("template=blog-category,sort=title,blog_categories.owner.blog_section.value=$blogSection") as $category) : ?>
-          <li><a href="<?= $category->url ?>"><?= $category->title ?> </a></li>
-        <?php endforeach; ?>
+        
+        <?php //foreach($pages->find("template=blog-category,sort=title,blog_categories.owner.blog_section.value=$blogSection") as $category) : ?>
+          <li><a href="<?php // $category->url ?>"><?php // $category->title ?> </a></li>
+        <?php //endforeach; ?>
       </ul>
-    </aside>
+    </aside> -->
+    <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
 
-    <aside class="widget">
+    <!-- <aside class="widget">
       <h4>Popular Tags</h4>
       <div class="blogTags">
-        <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
-        <?php foreach($pages->find("template=blog-tag,sort=title,blog_tags.owner.blog_section.value=$blogSection") as $tag) : ?>
-          <?php if($pages->find("template=blog-post, blog_tags=$tag")->count() > 1) :?>
-          <a href="<?= $tag->url ?>"><?= $tag->title ?> </a>
-          <?php endif; ?>
-        <?php endforeach; ?>
+        
+        <?php //foreach($pages->find("template=blog-tag,sort=title,blog_tags.owner.blog_section.value=$blogSection") as $tag) : ?>
+          <?php //if($pages->find("template=blog-post, blog_tags=$tag")->count() > 1) :?>
+          <a href="<?php // $tag->url ?>"><?php //$tag->title ?> </a>
+          <?php //endif; ?>
+        <?php //endforeach; ?>
       </div>
-    </aside>
+    </aside> -->
+    <!-- <li class="current-cat"><a href="#">Landscape Design</a></li> -->
     
     <!-- <aside class="widget widget_calendar">
         <h4>Calendar</h4>
