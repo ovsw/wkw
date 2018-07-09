@@ -28,6 +28,14 @@ require($config->paths->templates.'layouts/sidebar-right.inc') ?>
       
       <?= $page->blog_body; ?>
 
+      <?php $tags = $page->blog_tags; if (count($page->blog_tags)) :  $i = 0; ?>
+      <h3>Tags: </h3>
+        <?php foreach ($tags as $tag) : $i++; ?>
+        <a href="<?= $tag->url ?>" class="blogPostTag"><?= $tag->title ?></a>
+          <?php if ($i < count($tags )) echo ", " ;?>
+      <?php endforeach; ?>
+      <?php endif; ?>
+
       <?= $page->blog_comments->render(); ?>
       <?= $page->blog_comments->renderForm();  ?>
 
